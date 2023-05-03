@@ -5,16 +5,12 @@
              Title="IscaCar">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="¿Como puedo iniciar sesio?"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Entry Text="Correo" HorizontalOptions="Fill" x:Name="correo"></Entry>
-            <Entry Text="Password" HorizontalOptions="Fill" x:Name="password"></Entry>
-            <Button Text="Iniciar" Clicked="iniciarSesion" HorizontalOptions="FillAndExpand"></Button>
-            <Label Text="¿No tienes cuenta?"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Registrarse" Clicked="registrarse" HorizontalOptions="FillAndExpand"></Button>
+            <Label Text="¿Como puedo iniciar sesion?" HorizontalOptions="Center" />
+            <Entry HorizontalOptions="Fill" x:Name="correo"></Entry>
+            <Entry HorizontalOptions="Fill" x:Name="password"></Entry>
+            <Button Text="Iniciar" Clicked="iniciarSesion" HorizontalOptions="Center"></Button>
+            <Label Text="¿No tienes cuenta?" HorizontalOptions="Center" />
+            <Button Text="Registrarse" Clicked="registrarse" HorizontalOptions="Center" ></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

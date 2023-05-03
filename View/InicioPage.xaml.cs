@@ -6,6 +6,7 @@ namespace IscaCar.View;
 public partial class InicioPage : ContentPage
 {
     private InicioVM vm;
+
 	public InicioPage()
 	{
 		InitializeComponent();
@@ -26,17 +27,17 @@ public partial class InicioPage : ContentPage
         vm.Usuario = usuario;
         if (vm.Iniciar())
         {
-            await Shell.Current.GoToAsync($"{nameof(NewPage1)}?{nameof(NewPage1.Usuario)}={vm.Usuario}");
+            App.Current.MainPage = new AppShell();
+            //await Shell.Current.GoToAsync($"{nameof(PrincipalPage)}?{nameof(PrincipalPage.Usuario)}={vm.Usuario}");
         }
         else
         {
-            await DisplayAlert("Error", "¡El correo o la contraseña son incorrectas!", "Vale");
+            await DisplayAlert("Error", "Â¡El correo o la contraseÃ±a son incorrectas!", "Vale");
         }
     }
 
     private void registrarse(object sender, EventArgs e)
     {
-
+        App.Current.MainPage = new RegistrarPage();
     }
-
 }

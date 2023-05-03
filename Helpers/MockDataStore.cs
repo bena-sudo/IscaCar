@@ -10,9 +10,31 @@ namespace IscaCar.Helpers
         {
             items = new List<Usuario>()
             {
-                new Usuario { Id = Guid.NewGuid().ToString(), Correo = "Pepe", Password="Pepe" }
+                new Usuario { Id = Guid.NewGuid().ToString(), Correo = "pepe", Password="pepe" },
+                new Usuario { Id = Guid.NewGuid().ToString(), Correo = "paco", Password="paco" }
             };
         }
+
+        public async Task<bool> AddUsuarioAsync(Usuario item)
+        {
+            items.Add(item);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<bool> FindUsuarioAsync(Usuario usuario)
+        {
+            var oldItem = items.Where((Usuario arg) => arg.Correo == usuario.Correo).FirstOrDefault();
+            if (oldItem != null)
+            {
+                if (oldItem.Password == usuario.Password)
+                {
+                    return await Task.FromResult(true);
+                }
+            }
+            return await Task.FromResult(false);
+        }
+
         /**
         public async Task<bool> AddItemAsync(Usuario item)
         {
@@ -38,25 +60,5 @@ namespace IscaCar.Helpers
             return await Task.FromResult(true);
         }
         **/
-
-        public async Task<bool> AddUsuarioAsync(Usuario item)
-        {
-            items.Add(item);
-
-            return await Task.FromResult(true);
-        }
-
-        public async Task<bool> FindUsuarioAsync(Usuario usuario)
-        {
-            var oldItem = items.Where((Usuario arg) => arg.Correo == usuario.Correo).FirstOrDefault();
-            if (oldItem != null)
-            {
-                if (oldItem.Password == usuario.Password)
-                {
-                    return await Task.FromResult(true);
-                }
-            }
-            return await Task.FromResult(false);
-        }
     }
 }
