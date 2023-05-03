@@ -1,10 +1,12 @@
 ﻿using IscaCar.Model;
+using System.Collections.Generic;
 
 namespace IscaCar.Helpers
 {
     public class MockDataStore
     {
         readonly List<Usuario> items;
+        readonly List<Poblacion> poblaciones;
 
         public MockDataStore()
         {
@@ -12,6 +14,11 @@ namespace IscaCar.Helpers
             {
                 new Usuario { Id = Guid.NewGuid().ToString(), Correo = "pepe", Password="pepe" },
                 new Usuario { Id = Guid.NewGuid().ToString(), Correo = "paco", Password="paco" }
+            };
+            poblaciones = new List<Poblacion>()
+            {
+                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Alberic", CodigoPostal="1234" },
+                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Carcer", CodigoPostal="1232" }
             };
         }
 
@@ -33,6 +40,11 @@ namespace IscaCar.Helpers
                 }
             }
             return await Task.FromResult(false);
+        }
+
+        public List<Poblacion> GetAllPoblaciones()
+        {
+            return poblaciones.ToList();
         }
 
         /**

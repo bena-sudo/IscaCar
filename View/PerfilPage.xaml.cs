@@ -1,11 +1,15 @@
+using IscaCar.VM;
+
 namespace IscaCar.View;
 
 public partial class PerfilPage : ContentPage
 {
-	public string Nom;
+	public PerfilVM vm { get; set; }
 
 	public PerfilPage()
 	{
 		InitializeComponent();
+		vm = new PerfilVM();
+		BindingContext = vm;
 	}
 }

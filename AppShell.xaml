@@ -6,6 +6,8 @@
     xmlns:local="clr-namespace:IscaCar.View">
 
     <TabBar>
+        <ShellContent Title="BuscarPage"
+                      ContentTemplate="{DataTemplate local:BuscarPage}" />
         <ShellContent Title="PerfilPage"
                       ContentTemplate="{DataTemplate local:PerfilPage}" />
     </TabBar>

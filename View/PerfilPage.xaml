@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IscaCar.View.PerfilPage"
              Title="PerfilPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="{Binding Nom}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Correo" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Entry HorizontalOptions="Fill" x:Name="correo"></Entry>
+            <Label Text="Password" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Entry HorizontalOptions="Fill" x:Name="password"></Entry>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
