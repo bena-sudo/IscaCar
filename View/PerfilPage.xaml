@@ -9,6 +9,7 @@
             <Entry HorizontalOptions="Fill" x:Name="correo"></Entry>
             <Label Text="Password" VerticalOptions="Center" HorizontalOptions="Center" />
             <Entry HorizontalOptions="Fill" x:Name="password"></Entry>
+            <Button Text="Cerrar sesion" Clicked="cerrarSesion" HorizontalOptions="Center" ></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

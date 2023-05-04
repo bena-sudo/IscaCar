@@ -5,16 +5,13 @@ namespace IscaCar.VM
 {
     public class InicioVM
     {
-        public Usuario Usuario { get; set; }
-
         public InicioVM() 
         {
         }
 
-        public bool Iniciar()
+        public Usuario BuscarUsusario(String correo, String password)
         {
-            bool res = UsuarioDAO.ComprobarAsync(Usuario).Result;
-            return res;
+            return UsuarioDAO.BuscarUsuarioAsync(correo,password).Result;
         }
     }
 }

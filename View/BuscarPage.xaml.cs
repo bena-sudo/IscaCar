@@ -4,7 +4,7 @@ namespace IscaCar.View;
 
 public partial class BuscarPage : ContentPage
 {
-	public BuscarVM vm { get; set; }
+	public BuscarVM vm;// { get; set; }
 	public BuscarPage()
 	{
 		InitializeComponent();

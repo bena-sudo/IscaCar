@@ -8,7 +8,7 @@ namespace IscaCar.VM
     public class BuscarVM : Base
     {
         private ObservableCollection<Poblacion> _lPobl;
-        public ObservableCollection<Poblacion> lPob { get { return _lPobl; } set { _lPobl = value; OnPropertyChanged(); } }
+        public ObservableCollection<Poblacion> LPob { get { return _lPobl; } set { _lPobl = value; OnPropertyChanged(); } }
 
         private int _indexPobSalida;
         public int IndexPobSalida { get { return _indexPobSalida; } set { _indexPobSalida = value; OnPropertyChanged(); } }
@@ -21,9 +21,12 @@ namespace IscaCar.VM
 
         private Poblacion _PobLlegada;
         public Poblacion PobLlegada { get { return _PobLlegada; } set { _PobLlegada = value; OnPropertyChanged(); } }
+        
         public BuscarVM()
         {
-            lPob = new ObservableCollection<Poblacion>(PoblacionDAO.GetPoblaciones());
+            var poblacions = PoblacionDAO.GetPoblaciones();
+            LPob = new ObservableCollection<Poblacion>(poblacions);
+            OnPropertyChanged("LPob");
         }
     }
 }

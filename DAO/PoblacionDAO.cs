@@ -15,5 +15,6 @@ namespace IscaCar.DAO
         {
             return store.GetAllPoblaciones();
         }
+        
     }
 }

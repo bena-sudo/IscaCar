@@ -1,34 +1,30 @@
 using IscaCar.Model;
 using IscaCar.VM;
-
+using IscaCar.Helpers;
 namespace IscaCar.View;
 
 public partial class InicioPage : ContentPage
 {
     private InicioVM vm;
 
-	public InicioPage()
-	{
-		InitializeComponent();
+    public InicioPage()
+    {
+        InitializeComponent();
         vm = new InicioVM();
         BindingContext = vm;
-	}
+    }
 
-    private void iniciarSesion(object sender, EventArgs e)
+    private void botIniciarSesion(object sender, EventArgs e)
     {
         iniciarSesionAsync();
     }
     private async Task iniciarSesionAsync()
     {
-        Usuario usuario = new Usuario();
-        usuario.Correo = correo.Text;
-        usuario.Password = password.Text;
-
-        vm.Usuario = usuario;
-        if (vm.Iniciar())
+        Usuario usu = vm.BuscarUsusario(correo.Text, password.Text);
+        if (usu != null)
         {
+            Config.usuario = usu;
             App.Current.MainPage = new AppShell();
-            //await Shell.Current.GoToAsync($"{nameof(PrincipalPage)}?{nameof(PrincipalPage.Usuario)}={vm.Usuario}");
         }
         else
         {
@@ -36,7 +32,7 @@ public partial class InicioPage : ContentPage
         }
     }
 
-    private void registrarse(object sender, EventArgs e)
+    private void botRegistrarse(object sender, EventArgs e)
     {
         App.Current.MainPage = new RegistrarPage();
     }

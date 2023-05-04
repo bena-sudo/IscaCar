@@ -7,16 +7,16 @@ namespace IscaCar.DAO
     public static class UsuarioDAO
     {
         private static MockDataStore store = new MockDataStore();
-        public static async Task<bool> ComprobarAsync(Usuario usuario)
+
+        public static async Task<Usuario> BuscarUsuarioAsync(String correo, String password)
         {
-            
-            bool res = await store.FindUsuarioAsync(usuario);
+            Usuario res = await store.FindUsuarioAsync(correo,password);
             return res;
         }
 
-        public static async Task<bool> AddUsuario(Usuario usuario)
+        public static async Task<bool> AddUsuarioAsync(String correo, String password)
         {
-            bool res = await store.AddUsuarioAsync(usuario);
+            bool res = await store.AddUsuarioAsync(correo, password);
             return res;
         }
     }

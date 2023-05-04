@@ -22,29 +22,25 @@ namespace IscaCar.Helpers
             };
         }
 
-        public async Task<bool> AddUsuarioAsync(Usuario item)
+        public async Task<bool> AddUsuarioAsync(String correo, String password)
         {
-            items.Add(item);
-
+            Usuario usu = new Usuario();
+            usu.Id = Guid.NewGuid().ToString();
+            usu.Correo = correo;
+            usu.Password = password;
+            items.Add(usu);
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> FindUsuarioAsync(Usuario usuario)
+        public async Task<Usuario> FindUsuarioAsync(String correo, String password)
         {
-            var oldItem = items.Where((Usuario arg) => arg.Correo == usuario.Correo).FirstOrDefault();
-            if (oldItem != null)
-            {
-                if (oldItem.Password == usuario.Password)
-                {
-                    return await Task.FromResult(true);
-                }
-            }
-            return await Task.FromResult(false);
+            var oldItem = items.Where((Usuario arg) => arg.Correo == correo && arg.Password==password).FirstOrDefault();
+            return await Task.FromResult(oldItem);
         }
 
         public List<Poblacion> GetAllPoblaciones()
         {
-            return poblaciones.ToList();
+            return poblaciones;
         }
 
         /**

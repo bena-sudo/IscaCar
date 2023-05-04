@@ -9,8 +9,8 @@
             <Entry HorizontalOptions="Fill" x:Name="correo"></Entry>
             <Label Text="Password" VerticalOptions="Center" HorizontalOptions="Center" />
             <Entry HorizontalOptions="Fill" x:Name="password"></Entry>
-            <Button Text="Cancelar" Clicked="cancelar" HorizontalOptions="FillAndExpand"></Button>
-            <Button Text="Registrarse" Clicked="registrarse" HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="Cancelar" Clicked="botCancelar" HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="Registrarse" Clicked="botRegistrar" HorizontalOptions="FillAndExpand"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

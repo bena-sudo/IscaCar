@@ -1,36 +1,40 @@
 ﻿using IscaCar.Helpers;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace IscaCar.Model
 {
+    [Table("Viaje")]
     public class Viaje : Base
     {
-        private int _id;
-        public int Id { get { return _id; } set { _id = value; OnPropertyChanged(); } }
+        [PrimaryKey, AutoIncrement]
+        public string Id { get { return _id; } set { _id = value; OnPropertyChanged(); } }
+        private string _id;
 
-        private Usuario _usuario;
+        [ManyToOne]
         public Usuario Usuario { get { return _usuario; } set { _usuario = value; OnPropertyChanged(); } }
+        private Usuario _usuario;
 
-        private int _plazas;
         public int Plazas { get { return _plazas; } set { _plazas = value; OnPropertyChanged(); } }
+        private int _plazas;
 
-        private DateTime _fechaInicio;
         public DateTime FfechaInicio { get { return _fechaInicio; } set { _fechaInicio = value; OnPropertyChanged(); } }
+        private DateTime _fechaInicio;
 
-        private DateTime _fechaFin;
         public DateTime FechaFin { get { return _fechaFin; } set { _fechaFin = value; OnPropertyChanged(); } }
+        private DateTime _fechaFin;
 
-
-
-        private List<DiaSetmana> _diaSetmana;
+        [OneToMany]
         public List<DiaSetmana> DiasSetmana { get { return _diaSetmana; } set { _diaSetmana = value; OnPropertyChanged(); } }
+        private List<DiaSetmana> _diaSetmana;
 
-        private Poblacion _origen;
         public Poblacion Origen { get { return _origen; } set { _origen = value; OnPropertyChanged(); } }
+        private Poblacion _origen;
 
-        private Poblacion _destino;
         public Poblacion Destino { get { return _destino; } set { _destino = value; OnPropertyChanged(); } }
+        private Poblacion _destino;
 
-        private string _observaciones;
         public string Observaciones { get { return _observaciones; } set { _observaciones = value; OnPropertyChanged(); } }
+        private string _observaciones;
     }
 }

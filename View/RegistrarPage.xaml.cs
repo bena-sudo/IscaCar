@@ -14,23 +14,20 @@ public partial class RegistrarPage : ContentPage
         BindingContext = vm;
 	}
 
-    private void cancelar(object sender, EventArgs e)
+    private void botCancelar(object sender, EventArgs e)
     {
         App.Current.MainPage = new InicioPage();
     }
 
     
-    private void registrarse(object sender, EventArgs e)
+    private void botRegistrar(object sender, EventArgs e)
     {
-        registrarseAsync();
+        registrarAsync();
     }
 
-    private async Task registrarseAsync()
+    private async Task registrarAsync()
     {
-        Usuario u = new Usuario();
-        u.Correo = correo.Text;
-        u.Password = password.Text;
-        await UsuarioDAO.AddUsuario(u);
+        await UsuarioDAO.AddUsuarioAsync(correo.Text, password.Text);
         App.Current.MainPage = new InicioPage();
     }
 }

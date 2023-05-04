@@ -12,4 +12,9 @@ public partial class PerfilPage : ContentPage
 		vm = new PerfilVM();
 		BindingContext = vm;
 	}
+
+	private void cerrarSesion(object sender, EventArgs e)
+	{
+		App.Current.MainPage = new InicioPage();
+	}
 }
