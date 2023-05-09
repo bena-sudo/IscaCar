@@ -5,18 +5,11 @@
              Title="BuscarPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding LPobl}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding Nombre}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Picker ItemsSource="{Binding LPobl}"
+            <Picker ItemsSource="{Binding LPob}"
                 ItemDisplayBinding="{Binding Nombre}" 
                 SelectedIndex="{Binding IndexPobSalida}" 
                 SelectedItem="{Binding PobSalida}" />
-            <Picker ItemsSource="{Binding LPobl}"
+            <Picker ItemsSource="{Binding LPob}"
                 ItemDisplayBinding="{Binding Nombre}" 
                 SelectedIndex="{Binding IndexPobLlegada}" 
                 SelectedItem="{Binding PobLlegada}" />

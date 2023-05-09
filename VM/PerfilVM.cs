@@ -8,6 +8,9 @@ namespace IscaCar.VM
         public Usuario Usuario { get { return _usuario; } set { _usuario = value; OnPropertyChanged(); } }
         private Usuario _usuario;
 
-        public PerfilVM() { }
+        public PerfilVM()
+        {
+            Usuario = Config.usuario;
+        }
     }
 }
