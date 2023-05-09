@@ -1,20 +1,16 @@
 ﻿using IscaCar.Helpers;
-using SQLite;
+using IscaCar.Model;
 using SQLiteNetExtensions.Attributes;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace IscaCar.Model
+namespace IscaCar.VM
 {
-    [Table("Viaje")]
-    public class Viaje : Base
+    public class CrearViajeVM : Base
     {
-        [PrimaryKey, AutoIncrement]
-        public string Id { get { return _id; } set { _id = value; OnPropertyChanged(); } }
-        private string _id;
-
-        [ManyToOne]
-        public Usuario Usuario { get { return _usuario; } set { _usuario = value; OnPropertyChanged(); } }
-        private Usuario _usuario;
-
         public int Plazas { get { return _plazas; } set { _plazas = value; OnPropertyChanged(); } }
         private int _plazas;
 
@@ -24,7 +20,6 @@ namespace IscaCar.Model
         public DateTime FechaFin { get { return _fechaFin; } set { _fechaFin = value; OnPropertyChanged(); } }
         private DateTime _fechaFin;
 
-        [OneToMany]
         public List<DiaSetmana> DiasSetmana { get { return _diaSetmana; } set { _diaSetmana = value; OnPropertyChanged(); } }
         private List<DiaSetmana> _diaSetmana;
 

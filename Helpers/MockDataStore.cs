@@ -20,6 +20,22 @@ namespace IscaCar.Helpers
                 new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Alberic", CodigoPostal="1234" },
                 new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Carcer", CodigoPostal="1232" }
             };
+
+            var item = items.First();
+            Viaje viaje = new Viaje();
+            viaje.Id = Guid.NewGuid().ToString();
+            viaje.Usuario = item;
+            viaje.Destino = poblaciones.First();
+            viaje.Origen = poblaciones.Last();
+            viaje.Plazas = 2;
+            viaje.FechaInicio = DateTime.Now;
+            viaje.FechaFin = new DateTime(2023, 6, 1, 6, 34, 53);
+
+            item.Viajes = new List<Viaje>
+            {
+                viaje
+            };
+
         }
 
         public async Task<bool> AddUsuarioAsync(String correo, String password)
