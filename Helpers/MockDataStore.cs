@@ -50,13 +50,19 @@ namespace IscaCar.Helpers
 
         public async Task<Usuario> FindUsuarioAsync(String correo, String password)
         {
-            var oldItem = items.Where((Usuario arg) => arg.Correo == correo && arg.Password==password).FirstOrDefault();
+            var oldItem = items.Where((Usuario arg) => arg.Correo == correo && arg.Password == password).FirstOrDefault();
             return await Task.FromResult(oldItem);
         }
 
         public List<Poblacion> GetAllPoblaciones()
         {
             return poblaciones;
+        }
+
+        public void AddViaje(Viaje item)
+        {
+            var oldItem = items.Where((Usuario arg) => arg.Correo == item.Usuario.Correo).FirstOrDefault();
+            oldItem.Viajes.Add(item);
         }
 
         /**

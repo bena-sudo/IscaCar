@@ -3,10 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IscaCar.View.CrearViajePage"
              Title="CrearViajePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="¿Desde dónde sales?" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Picker ItemsSource="{Binding LPob}"
+                ItemDisplayBinding="{Binding Nombre}" 
+                SelectedIndex="{Binding IndexPobSalida}" 
+                SelectedItem="{Binding Origen}" 
+                VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="¿A dónde vas?" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Picker ItemsSource="{Binding LPob}"
+                ItemDisplayBinding="{Binding Nombre}" 
+                SelectedIndex="{Binding IndexPobLlegada}" 
+                SelectedItem="{Binding Destino}"
+                VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="¿Periodo de validez del viaje?" VerticalOptions="Center" HorizontalOptions="Center" />
+            <DatePicker Date="{Binding FechaInicio}" VerticalOptions="Center" HorizontalOptions="Center" ></DatePicker>
+            <Label Text="¿Fin del periodo de validez del viaje?" VerticalOptions="Center" HorizontalOptions="Center" />
+            <DatePicker Date="{Binding FechaFin}" VerticalOptions="Center" HorizontalOptions="Center" ></DatePicker>
+            <Label Text="¿Cuantas plazas tienes?" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Entry Text="{Binding Plazas}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="Observaciones" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Entry Text="{Binding Observaciones}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Button Text="Continuar" Clicked="continuar" HorizontalOptions="Center" ></Button>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

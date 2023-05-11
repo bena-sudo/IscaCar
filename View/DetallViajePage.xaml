@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IscaCar.View.DetallViajePage"
+             Title="DetallViajePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="¿Desde dónde sales?" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="{Binding Viaje.Origen}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="¿A dónde vas?" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="{Binding Viaje.Destino}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="¿Periodo de validez del viaje?" VerticalOptions="Center" HorizontalOptions="Center" />
+            <DatePicker Date="{Binding Viaje.FechaInicio}" VerticalOptions="Center" HorizontalOptions="Center" ></DatePicker>
+            <Label Text="¿Fin del periodo de validez del viaje?" VerticalOptions="Center" HorizontalOptions="Center" />
+            <DatePicker Date="{Binding Viaje.FechaFin}" VerticalOptions="Center" HorizontalOptions="Center" ></DatePicker>
+            <Label Text="¿Cuantas plazas tienes?" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Entry Text="{Binding Viaje.Plazas}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="Observaciones" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Entry Text="{Binding Viaje.Observaciones}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Button Text="Continuar" Clicked="continuar" HorizontalOptions="Center" ></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

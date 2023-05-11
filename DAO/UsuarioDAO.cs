@@ -19,5 +19,10 @@ namespace IscaCar.DAO
             bool res = await store.AddUsuarioAsync(correo, password);
             return res;
         }
+
+        public static void AddViaje(Viaje viaje)
+        {
+            store.AddViaje(viaje);
+        }
     }
 }

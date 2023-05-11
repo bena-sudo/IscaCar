@@ -8,6 +8,8 @@
     <TabBar>
         <ShellContent Title="BuscarPage"
                       ContentTemplate="{DataTemplate local:BuscarPage}" />
+        <ShellContent Title="CrearViajePage"
+                      ContentTemplate="{DataTemplate local:CrearViajePage}"/>
         <ShellContent Title="ViajePage"
                       ContentTemplate="{DataTemplate local:ViajePage}" />
         <ShellContent Title="PerfilPage"
