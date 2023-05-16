@@ -6,10 +6,15 @@ namespace IscaCar.VM
 {
     public class ViajeVM : Base
     {
-        private ObservableCollection<Viaje> _lviaj;
         public ObservableCollection<Viaje> LViaj { get { return _lviaj; } set { _lviaj = value; OnPropertyChanged(); } }
+        private ObservableCollection<Viaje> _lviaj;
 
-        public ViajeVM() 
+        public ViajeVM()
+        {
+            LViaj = new ObservableCollection<Viaje>(Config.usuario.Viajes);
+        }
+
+        public void carregarDades()
         {
             LViaj = new ObservableCollection<Viaje>(Config.usuario.Viajes);
         }

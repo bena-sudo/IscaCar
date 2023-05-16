@@ -5,7 +5,7 @@
              Title="ViajePage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding LViaj}" ItemTapped="itemPulsado">
+            <ListView x:Name="ItiListView" ItemsSource="{Binding LViaj}" ItemTapped="itemPulsado">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

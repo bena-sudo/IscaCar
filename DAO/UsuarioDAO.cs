@@ -1,6 +1,5 @@
 ﻿using IscaCar.Helpers;
 using IscaCar.Model;
-using System;
 
 namespace IscaCar.DAO
 {

@@ -7,14 +7,14 @@ namespace IscaCar.VM
 {
     public class CrearViajeVM : Base
     {
-        private ObservableCollection<Poblacion> _lPobl;
         public ObservableCollection<Poblacion> LPob { get { return _lPobl; } set { _lPobl = value; OnPropertyChanged(); } }
+        private ObservableCollection<Poblacion> _lPobl;
 
-        private int _indexPobSalida;
         public int IndexPobSalida { get { return _indexPobSalida; } set { _indexPobSalida = value; OnPropertyChanged(); } }
+        private int _indexPobSalida;
 
-        private int _indexPobLlegada;
         public int IndexPobLlegada { get { return _indexPobLlegada; } set { _indexPobLlegada = value; OnPropertyChanged(); } }
+        private int _indexPobLlegada;
 
         public int Plazas { get { return _plazas; } set { _plazas = value; OnPropertyChanged(); } }
         private int _plazas;
@@ -49,6 +49,8 @@ namespace IscaCar.VM
             viaje.Usuario = Config.usuario;
             viaje.Origen = Origen;
             viaje.Destino = Destino;
+            viaje.FechaInicio = FechaInicio;
+            viaje.FechaFin = FechaFin;
             viaje.Plazas = Plazas;
             viaje.Observaciones = Observaciones;
 

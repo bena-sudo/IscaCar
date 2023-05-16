@@ -1,10 +1,5 @@
 ﻿using IscaCar.Helpers;
 using IscaCar.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IscaCar.DAO
 {

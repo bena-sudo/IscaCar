@@ -22,5 +22,9 @@ namespace IscaCar.Model
         public List<Viaje> Viajes { get { return _viajes; } set { _viajes = value; OnPropertyChanged(); } }
         private List<Viaje> _viajes;
 
+        public Usuario()
+        {
+            Viajes = new List<Viaje>();
+        }
     }
 }

@@ -10,5 +10,10 @@ namespace IscaCar.VM
         private Usuario _usuario;
 
         public RegistrarVM() { }
+
+        public async Task AddUsuarioAsync(String correo, String password)
+        {
+            await UsuarioDAO.AddUsuarioAsync(correo, password);
+        }
     }
 }

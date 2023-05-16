@@ -18,21 +18,25 @@ namespace IscaCar.Helpers
             poblaciones = new List<Poblacion>()
             {
                 new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Alberic", CodigoPostal="1234" },
-                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Carcer", CodigoPostal="1232" }
+                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Carcer", CodigoPostal="1232" },
+                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Castello", CodigoPostal="1252" },
+                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Tous", CodigoPostal="2457" }
             };
 
             var item = items.First();
             Viaje viaje = new Viaje();
-            viaje.Id = Guid.NewGuid().ToString();
             viaje.Usuario = item;
             viaje.Destino = poblaciones.First();
             viaje.Origen = poblaciones.Last();
             viaje.Plazas = 2;
             viaje.FechaInicio = DateTime.Now;
-            viaje.FechaFin = new DateTime(2023, 6, 1, 6, 34, 53);
+            viaje.FechaFin = new DateTime(2023, 6, 1, 0, 0, 0);
+            viaje.Observaciones = "Soy amable";
+            viaje.Usuario = item;
 
             item.Viajes = new List<Viaje>
             {
+                viaje,
                 viaje
             };
 

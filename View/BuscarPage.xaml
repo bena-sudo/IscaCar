@@ -8,13 +8,15 @@
             <Picker ItemsSource="{Binding LPob}"
                 ItemDisplayBinding="{Binding Nombre}" 
                 SelectedIndex="{Binding IndexPobSalida}" 
-                SelectedItem="{Binding PobSalida}" />
+                SelectedItem="{Binding PobSalida}" 
+                VerticalOptions="Center" HorizontalOptions="Center" />
             <Picker ItemsSource="{Binding LPob}"
                 ItemDisplayBinding="{Binding Nombre}" 
                 SelectedIndex="{Binding IndexPobLlegada}" 
-                SelectedItem="{Binding PobLlegada}" />
-            <DatePicker Date="{Binding Data}" x:Name="DataFi" ></DatePicker>
-            <Button Text="Buscar" Clicked="buscar" HorizontalOptions="Center" ></Button>
+                SelectedItem="{Binding PobLlegada}"
+                VerticalOptions="Center" HorizontalOptions="Center" />
+            <DatePicker Date="{Binding Data}" x:Name="DataFi" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Button Text="Buscar" Clicked="buscar" VerticalOptions="Center" HorizontalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

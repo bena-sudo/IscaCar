@@ -1,6 +1,7 @@
 using IscaCar.Model;
 using IscaCar.VM;
 using IscaCar.Helpers;
+
 namespace IscaCar.View;
 
 public partial class InicioPage : ContentPage

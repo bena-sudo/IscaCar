@@ -8,17 +8,17 @@ namespace IscaCar.Model
     [Table("DiaSetmana")]
     public class DiaSetmana : Base
     {
-        private int _id;
         public int Id { get { return _id; } set { _id = value; OnPropertyChanged(); } }
+        private int _id;
 
-        private DateTime _dia;
         public DateTime Dia { get { return _dia; } set { _dia = value; OnPropertyChanged(); } }
+        private DateTime _dia;
 
-        private TimeOnly _salida;
         public TimeOnly Salida { get { return _salida; } set { _salida = value; OnPropertyChanged();  } }
+        private TimeOnly _salida;
 
-        private TimeOnly _llegada;
         public TimeOnly Llegada { get { return _llegada; } set { _llegada = value; OnPropertyChanged(); } }
+        private TimeOnly _llegada;
 
         [ManyToOne]
         public Viaje Viaje { get { return _viaje; } set { _viaje = value; OnPropertyChanged(); } }

@@ -1,5 +1,3 @@
-using IscaCar.DAO;
-using IscaCar.Model;
 using IscaCar.VM;
 
 namespace IscaCar.View;
@@ -27,7 +25,7 @@ public partial class RegistrarPage : ContentPage
 
     private async Task registrarAsync()
     {
-        await UsuarioDAO.AddUsuarioAsync(correo.Text, password.Text);
+        await vm.AddUsuarioAsync(correo.Text, password.Text);
         App.Current.MainPage = new InicioPage();
     }
 }
