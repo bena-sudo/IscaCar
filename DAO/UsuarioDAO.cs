@@ -28,5 +28,10 @@ namespace IscaCar.DAO
         {
             return store.getAllViajes();
         }
+
+        public static void DeleteViaje(Viaje viaje)
+        {
+            store.DeleteViaje(viaje);
+        }
     }
 }

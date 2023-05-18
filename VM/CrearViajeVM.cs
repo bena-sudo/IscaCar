@@ -41,6 +41,8 @@ namespace IscaCar.VM
         {
             var poblacions = PoblacionDAO.GetPoblaciones();
             LPob = new ObservableCollection<Poblacion>(poblacions);
+            FechaInicio = DateTime.Now;
+            FechaFin = DateTime.Now;
         }
 
         public void crearViaje()

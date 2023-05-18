@@ -18,7 +18,7 @@ public partial class ViajePage : ContentPage
     private void itemPulsado(object sender, ItemTappedEventArgs e)
     {
 		viaje = (Viaje)e.Item;
-		Config.Viaje = viaje;
+		//Config.Viaje = viaje;
 		abrirVentanaAsync();
     }
 	public async Task abrirVentanaAsync()

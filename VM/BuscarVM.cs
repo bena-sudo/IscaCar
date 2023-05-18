@@ -21,12 +21,17 @@ namespace IscaCar.VM
 
         public Poblacion PobLlegada { get { return _PobLlegada; } set { _PobLlegada = value; OnPropertyChanged(); } }
         private Poblacion _PobLlegada;
-        
+
+        public DateTime Data { get { return _fechaFin; } set { _fechaFin = value; OnPropertyChanged(); } }
+        private DateTime _fechaFin;
+
         public BuscarVM()
         {
             var poblacions = PoblacionDAO.GetPoblaciones();
             LPob = new ObservableCollection<Poblacion>(poblacions);
             OnPropertyChanged("LPob");
+
+            Data = DateTime.Now;
         }
 
         public bool buscar()
@@ -41,7 +46,28 @@ namespace IscaCar.VM
                     {
                         if (item.Origen.CodigoPostal == PobSalida.CodigoPostal)
                         {
-                            list2.Add(item);
+                            /*
+                            if (item.FechaInicio.Year == Data.Year)
+                            {
+                                if (item.FechaInicio.Month == Data.Month)
+                                {
+                                    if (item.FechaInicio.Day == Data.Day)
+                                    {
+                                        list2.Add(item);
+                                    }
+                                }
+                            }
+                            */
+                            if (item.FechaInicio.Year >= Data.Year && item.FechaFin.Year >= Data.Year)
+                            {
+                                if (item.FechaInicio.Month >= Data.Month && item.FechaFin.Month >= Data.Month)
+                                {
+                                    if (item.FechaInicio.Day <= Data.Day && item.FechaFin.Day <= Data.Day)
+                                    {
+                                        list2.Add(item);
+                                    }
+                                }
+                            }
                         }
                     }
                 }

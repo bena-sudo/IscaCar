@@ -1,4 +1,5 @@
-﻿using IscaCar.Helpers;
+﻿using IscaCar.DAO;
+using IscaCar.Helpers;
 using IscaCar.Model;
 
 namespace IscaCar.VM
@@ -9,5 +10,10 @@ namespace IscaCar.VM
         private Viaje _viaje;
 
         public DetallViajeVM() { }
+
+        public void deleteViaje()
+        {
+            UsuarioDAO.DeleteViaje(Viaje);
+        }
     }
 }

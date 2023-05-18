@@ -15,7 +15,7 @@
                 SelectedIndex="{Binding IndexPobLlegada}" 
                 SelectedItem="{Binding PobLlegada}"
                 VerticalOptions="Center" HorizontalOptions="Center" />
-            <DatePicker Date="{Binding Data}" x:Name="DataFi" VerticalOptions="Center" HorizontalOptions="Center" />
+            <DatePicker Date="{Binding Data}" VerticalOptions="Center" HorizontalOptions="Center" />
             <Button Text="Buscar" Clicked="buscar" VerticalOptions="Center" HorizontalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>

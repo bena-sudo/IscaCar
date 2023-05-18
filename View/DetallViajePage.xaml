@@ -20,6 +20,7 @@
             <Label Text="Observaciones" VerticalOptions="Center" HorizontalOptions="Center" />
             <Entry Text="{Binding Viaje.Observaciones}" VerticalOptions="Center" HorizontalOptions="Center" />
             <Button Text="Cancelar" Clicked="btCancelar" HorizontalOptions="Center" />
+            <Button Text="Borrar" Clicked="btBorrar" HorizontalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

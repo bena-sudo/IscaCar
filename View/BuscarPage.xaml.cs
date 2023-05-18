@@ -18,13 +18,20 @@ public partial class BuscarPage : ContentPage
     }
 	private async Task buscarAsync()
 	{
-        if (vm.buscar())
-        {
-            await Shell.Current.GoToAsync($"{nameof(LlistaBuscarPage)}");
+        if (vm.PobLlegada == null || vm.PobSalida == null)
+		{
+            await DisplayAlert("Error", "¡Debe de introducir una poblacion!", "Vale");
         }
-        else
-        {
-            await DisplayAlert("Not Found", "¡No se ha encontrado ningun resultado!", "Vale");
+		else
+		{
+            if (vm.buscar())
+            {
+                await Shell.Current.GoToAsync($"{nameof(LlistaBuscarPage)}");
+            }
+            else
+            {
+                await DisplayAlert("Not Found", "¡No se ha encontrado ningun resultado!", "Vale");
+            }
         }
     }
 }

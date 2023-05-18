@@ -82,6 +82,11 @@ namespace IscaCar.Helpers
             return lv;
         }
 
+        public void DeleteViaje(Viaje viaje)
+        {
+            Config.usuario.Viajes.Remove(viaje);
+        }
+
         /**
         public async Task<bool> AddItemAsync(Usuario item)
         {

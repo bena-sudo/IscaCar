@@ -22,7 +22,7 @@ public partial class DetallViajePage : ContentPage
     {
         InitializeComponent();
         vm = new DetallViajeVM();
-        vm.Viaje = Config.Viaje;
+        //vm.Viaje = Config.Viaje;
         BindingContext = vm;
     }
 
@@ -35,5 +35,20 @@ public partial class DetallViajePage : ContentPage
     private async Task cambiarVistaAsync()
     {
         await Shell.Current.GoToAsync($"{nameof(ViajePage)}");
+    }
+
+    private void btBorrar(object sender, EventArgs e)
+    {
+        borrarAsync();
+    }
+
+    private async Task borrarAsync()
+    {
+        bool answer = await DisplayAlert("¿Atencion?", "¿Quieres borrar el viaje?", "Si", "No");
+
+        if (answer)
+        {
+            vm.deleteViaje();
+        }
     }
 }
