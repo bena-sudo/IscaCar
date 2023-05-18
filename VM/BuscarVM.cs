@@ -28,5 +28,30 @@ namespace IscaCar.VM
             LPob = new ObservableCollection<Poblacion>(poblacions);
             OnPropertyChanged("LPob");
         }
+
+        public bool buscar()
+        {
+            List<Viaje> list = UsuarioDAO.getAllViajes();
+            List<Viaje> list2 = new List<Viaje>();
+            foreach (var item in list)
+            {
+                if (item != null)
+                {
+                    if (item.Destino.CodigoPostal == PobLlegada.CodigoPostal)
+                    {
+                        if (item.Origen.CodigoPostal == PobSalida.CodigoPostal)
+                        {
+                            list2.Add(item);
+                        }
+                    }
+                }
+            }
+            if (list2.Count > 0)
+            {
+                Config.ViajeList = list2;
+                return true;
+            }
+            return false;
+        }
     }
 }

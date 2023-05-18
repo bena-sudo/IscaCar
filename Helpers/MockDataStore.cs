@@ -69,6 +69,19 @@ namespace IscaCar.Helpers
             oldItem.Viajes.Add(item);
         }
 
+        public List<Viaje> getAllViajes()
+        {
+            List<Viaje> lv = new List<Viaje>();
+            foreach (var item in items) 
+            {
+                foreach (var i in item.Viajes)
+                {
+                    lv.Add(i);
+                }
+            }
+            return lv;
+        }
+
         /**
         public async Task<bool> AddItemAsync(Usuario item)
         {

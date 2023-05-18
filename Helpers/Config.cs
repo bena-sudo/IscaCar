@@ -7,5 +7,7 @@ namespace IscaCar.Helpers
         public static Usuario usuario;
 
         public static Viaje Viaje;
+
+        public static List<Viaje> ViajeList;
     }
 }

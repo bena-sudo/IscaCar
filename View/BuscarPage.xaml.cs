@@ -4,7 +4,7 @@ namespace IscaCar.View;
 
 public partial class BuscarPage : ContentPage
 {
-	public BuscarVM vm;// { get; set; }
+	public BuscarVM vm;
 	public BuscarPage()
 	{
 		InitializeComponent();
@@ -14,6 +14,17 @@ public partial class BuscarPage : ContentPage
 
     private void buscar(object sender, EventArgs e)
     {
-
+        buscarAsync();
+    }
+	private async Task buscarAsync()
+	{
+        if (vm.buscar())
+        {
+            await Shell.Current.GoToAsync($"{nameof(LlistaBuscarPage)}");
+        }
+        else
+        {
+            await DisplayAlert("Not Found", "¡No se ha encontrado ningun resultado!", "Vale");
+        }
     }
 }

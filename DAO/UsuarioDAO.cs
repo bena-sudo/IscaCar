@@ -23,5 +23,10 @@ namespace IscaCar.DAO
         {
             store.AddViaje(viaje);
         }
+
+        public static List<Viaje> getAllViajes()
+        {
+            return store.getAllViajes();
+        }
     }
 }
