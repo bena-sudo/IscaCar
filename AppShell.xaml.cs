@@ -20,7 +20,4 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(View.LlistaBuscarPage), typeof(View.LlistaBuscarPage));
         Routing.RegisterRoute(nameof(View.BuscarDetallPage), typeof(View.BuscarDetallPage));
     }
-
-    
-    
 }

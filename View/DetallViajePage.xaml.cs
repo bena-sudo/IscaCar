@@ -44,7 +44,7 @@ public partial class DetallViajePage : ContentPage
 
     private async Task borrarAsync()
     {
-        bool answer = await DisplayAlert("Atencion?", "Quieres borrar el viaje?", "Si", "No");
+        bool answer = await DisplayAlert("Atencion", "Quieres borrar el viaje?", "Si", "No");
 
         if (answer)
         {

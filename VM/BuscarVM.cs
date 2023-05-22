@@ -46,27 +46,9 @@ namespace IscaCar.VM
                     {
                         if (item.Origen.CodigoPostal == PobSalida.CodigoPostal)
                         {
-                            /*
-                            if (item.FechaInicio.Year == Data.Year)
+                            if (item.FechaInicio <= Data && item.FechaFin >= Data)
                             {
-                                if (item.FechaInicio.Month == Data.Month)
-                                {
-                                    if (item.FechaInicio.Day == Data.Day)
-                                    {
-                                        list2.Add(item);
-                                    }
-                                }
-                            }
-                            */
-                            if (item.FechaInicio.Year >= Data.Year && item.FechaFin.Year >= Data.Year)
-                            {
-                                if (item.FechaInicio.Month >= Data.Month && item.FechaFin.Month >= Data.Month)
-                                {
-                                    if (item.FechaInicio.Day <= Data.Day && item.FechaFin.Day >= Data.Day)
-                                    {
-                                        list2.Add(item);
-                                    }
-                                }
+                                list2.Add(item);
                             }
                         }
                     }
