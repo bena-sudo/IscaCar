@@ -7,13 +7,13 @@ namespace IscaCar.View;
 [QueryProperty(nameof(Viaje), "data")]
 public partial class BuscarDetallPage : ContentPage
 {
-    private Viaje _viajes;
-    public Viaje Viajes
+    private Viaje _viaje;
+    public Viaje Viaje
     {
-        get { return _viajes; }
+        get { return _viaje; }
         set
         {
-            _viajes = value;
+            _viaje = value;
             vm.Viaje = value;
         }
     }
@@ -22,7 +22,7 @@ public partial class BuscarDetallPage : ContentPage
     {
         InitializeComponent();
         vm = new BuscarDetallVM();
-        vm.Viaje = Config.Viaje;
+        //vm.Viaje = Config.Viaje;
         BindingContext = vm;
     }
 

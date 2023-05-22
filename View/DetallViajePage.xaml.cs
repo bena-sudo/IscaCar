@@ -7,13 +7,13 @@ namespace IscaCar.View;
 [QueryProperty(nameof(Viaje), "data")]
 public partial class DetallViajePage : ContentPage
 {
-    private Viaje _viajes;
-    public Viaje Viajes
+    private Viaje _viaje;
+    public Viaje Viaje
     {
-        get { return _viajes; }
+        get { return _viaje; }
         set
         {
-            _viajes = value;
+            _viaje = value;
             vm.Viaje = value;
         }
     }
@@ -44,11 +44,12 @@ public partial class DetallViajePage : ContentPage
 
     private async Task borrarAsync()
     {
-        bool answer = await DisplayAlert("¿Atencion?", "¿Quieres borrar el viaje?", "Si", "No");
+        bool answer = await DisplayAlert("Atencion?", "Quieres borrar el viaje?", "Si", "No");
 
         if (answer)
         {
             vm.deleteViaje();
+            await Shell.Current.GoToAsync($"{nameof(ViajePage)}");
         }
     }
 }

@@ -20,7 +20,7 @@ public partial class BuscarPage : ContentPage
 	{
         if (vm.PobLlegada == null || vm.PobSalida == null)
 		{
-            await DisplayAlert("Error", "¡Debe de introducir una poblacion!", "Vale");
+            await DisplayAlert("Error", "Debe de introducir una poblacion!", "Vale");
         }
 		else
 		{
@@ -30,7 +30,7 @@ public partial class BuscarPage : ContentPage
             }
             else
             {
-                await DisplayAlert("Not Found", "¡No se ha encontrado ningun resultado!", "Vale");
+                await DisplayAlert("Not Found", "No se ha encontrado ningun resultado!", "Vale");
             }
         }
     }

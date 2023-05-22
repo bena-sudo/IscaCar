@@ -62,7 +62,7 @@ namespace IscaCar.VM
                             {
                                 if (item.FechaInicio.Month >= Data.Month && item.FechaFin.Month >= Data.Month)
                                 {
-                                    if (item.FechaInicio.Day <= Data.Day && item.FechaFin.Day <= Data.Day)
+                                    if (item.FechaInicio.Day <= Data.Day && item.FechaFin.Day >= Data.Day)
                                     {
                                         list2.Add(item);
                                     }
