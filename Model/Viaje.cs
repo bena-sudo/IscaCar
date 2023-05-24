@@ -36,5 +36,14 @@ namespace IscaCar.Model
 
         public string Observaciones { get { return _observaciones; } set { _observaciones = value; OnPropertyChanged(); } }
         private string _observaciones;
+
+        public List<Poblacion> LPob { get { return _lpob; } set { _lpob = value; OnPropertyChanged(); } }
+        private List<Poblacion> _lpob;
+
+        public Viaje()
+        {
+            DiasSetmana = new List<DiaSetmana>();
+            LPob = new List<Poblacion>();
+        }
     }
 }

@@ -33,10 +33,14 @@ namespace IscaCar.Helpers
             viaje.FechaFin = new DateTime(2023, 6, 1, 0, 0, 0);
             viaje.Observaciones = "Soy amable";
             viaje.Usuario = item;
+            viaje.LPob = new List<Poblacion>
+            {
+                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Alberic", CodigoPostal="1234" },
+                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Carcer", CodigoPostal="1232" }
+            };
 
             item.Viajes = new List<Viaje>
             {
-                viaje,
                 viaje
             };
 

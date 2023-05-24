@@ -19,6 +19,19 @@
             <Entry Text="{Binding Viaje.Plazas}" VerticalOptions="Center" HorizontalOptions="Center" />
             <Label Text="Observaciones" VerticalOptions="Center" HorizontalOptions="Center" />
             <Entry Text="{Binding Viaje.Observaciones}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <ListView ItemsSource="{Binding Viaje.LPob}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Label  Text="{Binding Nombre}" 
+                   Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Button Text="Cancelar" Clicked="btCancelar" HorizontalOptions="Center" />
             <Button Text="Borrar" Clicked="btBorrar" HorizontalOptions="Center" />
         </StackLayout>

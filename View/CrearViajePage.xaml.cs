@@ -37,7 +37,6 @@ public partial class CrearViajePage : ContentPage
                     {
                         if (vm.FechaInicio.Day >= DateTime.Now.Day)
                         {
-                            //
                             if (vm.FechaFin.Year >= vm.FechaInicio.Year)
                             {
                                 if (vm.FechaFin.Month >= vm.FechaInicio.Month)
@@ -79,6 +78,25 @@ public partial class CrearViajePage : ContentPage
                     await DisplayAlert("Error", "¡Debe de introducir una fecha valida!", "Vale");
                 }
             }
+        }
+    }
+
+    private void addPoblacio(object sender, EventArgs e)
+    {
+        addPoblacioAsync();
+    }
+
+    private async Task addPoblacioAsync()
+    {
+        Poblacion p = (Poblacion)ListEsq.SelectedItem;
+        if (p != null)
+        {
+            vm.addPoblacio(p);
+
+        }
+        else
+        {
+            await DisplayAlert("Error", "¡Debes de seleccionar una poblacion!", "Vale");
         }
     }
 }

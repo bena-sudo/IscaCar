@@ -18,7 +18,6 @@ public partial class LlistaBuscarPage : ContentPage
     private void itemPulsado(object sender, ItemTappedEventArgs e)
     {
         viaje = (Viaje)e.Item;
-        Config.Viaje = viaje;
         abrirVentanaAsync();
     }
 

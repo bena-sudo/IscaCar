@@ -15,6 +15,7 @@ public partial class DetallViajePage : ContentPage
         {
             _viaje = value;
             vm.Viaje = value;
+            BindingContext = vm;
         }
     }
     private DetallViajeVM vm;
@@ -22,8 +23,6 @@ public partial class DetallViajePage : ContentPage
     {
         InitializeComponent();
         vm = new DetallViajeVM();
-        //vm.Viaje = Config.Viaje;
-        BindingContext = vm;
     }
 
 

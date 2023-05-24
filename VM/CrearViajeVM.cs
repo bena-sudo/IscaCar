@@ -36,11 +36,19 @@ namespace IscaCar.VM
 
         public string Observaciones { get { return _observaciones; } set { _observaciones = value; OnPropertyChanged(); } }
         private string _observaciones;
-        
+
+        public ObservableCollection<Poblacion> LPobEq { get { return _lPoblEq; } set { _lPoblEq = value; OnPropertyChanged(); } }
+        private ObservableCollection<Poblacion> _lPoblEq;
+
+        public ObservableCollection<Poblacion> LPobDr { get { return _lPoblDr; } set { _lPoblDr = value; OnPropertyChanged(); } }
+        private ObservableCollection<Poblacion> _lPoblDr;
+
         public CrearViajeVM()
         {
             var poblacions = PoblacionDAO.GetPoblaciones();
             LPob = new ObservableCollection<Poblacion>(poblacions);
+            LPobEq = new ObservableCollection<Poblacion>(poblacions);
+            LPobDr = new ObservableCollection<Poblacion>();
             FechaInicio = DateTime.Now;
             FechaFin = DateTime.Now;
         }
@@ -55,8 +63,15 @@ namespace IscaCar.VM
             viaje.FechaFin = FechaFin;
             viaje.Plazas = Plazas;
             viaje.Observaciones = Observaciones;
+            viaje.LPob = new List<Poblacion>(LPobDr);
 
             UsuarioDAO.AddViaje(viaje);
+        }
+
+        public void addPoblacio(Poblacion p)
+        {
+            LPobEq.Remove(p);
+            LPobDr.Add(p);
         }
     }
 } 

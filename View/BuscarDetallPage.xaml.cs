@@ -15,6 +15,7 @@ public partial class BuscarDetallPage : ContentPage
         {
             _viaje = value;
             vm.Viaje = value;
+            BindingContext = vm;
         }
     }
     private BuscarDetallVM vm;
@@ -22,8 +23,7 @@ public partial class BuscarDetallPage : ContentPage
     {
         InitializeComponent();
         vm = new BuscarDetallVM();
-        //vm.Viaje = Config.Viaje;
-        BindingContext = vm;
+        
     }
 
     private void btCancelar(object sender, EventArgs e)
