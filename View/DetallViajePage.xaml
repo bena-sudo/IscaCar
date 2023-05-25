@@ -32,6 +32,30 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <ListView  ItemsSource="{Binding Viaje.DiasSetmana}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0"  Text="{Binding Dia}" 
+                   Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
+                                <Label Grid.Row="0" Grid.Column="1"  Text="{Binding Salida}" 
+                   Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
+                                <Label  Grid.Row="0" Grid.Column="2" Text="{Binding Llegada}" 
+                   Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Button Text="Cancelar" Clicked="btCancelar" HorizontalOptions="Center" />
             <Button Text="Borrar" Clicked="btBorrar" HorizontalOptions="Center" />
         </StackLayout>

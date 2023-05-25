@@ -46,6 +46,26 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <Picker ItemsSource="{Binding LDia}"
+                
+                SelectedItem="{Binding Dia}" 
+                VerticalOptions="Center" HorizontalOptions="Center" />
+            <TimePicker  x:Name="horaSalida" VerticalOptions="Center" HorizontalOptions="Center" ></TimePicker>
+            <TimePicker  x:Name="horaLlegada" VerticalOptions="Center" HorizontalOptions="Center" ></TimePicker>
+            <Button Text="Add" Clicked="addDia" HorizontalOptions="Center" ></Button>
+            <ListView  ItemsSource="{Binding DiasSetmana}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label  Text="{Binding Dia}" 
+                   Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            
             <Button Text="Continuar" Clicked="continuar" HorizontalOptions="Center" ></Button>
         </StackLayout>
     </ContentPage.Content>

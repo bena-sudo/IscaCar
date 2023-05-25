@@ -43,6 +43,7 @@ public partial class CrearViajePage : ContentPage
                                 {
                                     if (vm.FechaFin.Day > vm.FechaInicio.Day)
                                     {
+                                        
                                         vm.crearViaje();
                                         await Shell.Current.GoToAsync($"{nameof(CrearViajePage)}");
                                     }
@@ -98,5 +99,10 @@ public partial class CrearViajePage : ContentPage
         {
             await DisplayAlert("Error", "¡Debes de seleccionar una poblacion!", "Vale");
         }
+    }
+
+    private void addDia(object sender, EventArgs e)
+    {
+        vm.addDia(horaSalida,horaLlegada);
     }
 }

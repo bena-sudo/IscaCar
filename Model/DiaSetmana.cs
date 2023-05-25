@@ -11,11 +11,11 @@ namespace IscaCar.Model
         public int Id { get { return _id; } set { _id = value; OnPropertyChanged(); } }
         private int _id;
 
-        public DateTime Dia { get { return _dia; } set { _dia = value; OnPropertyChanged(); } }
-        private DateTime _dia;
+        public String Dia { get { return _dia; } set { _dia = value; OnPropertyChanged(); } }
+        private String _dia;
 
-        public TimeOnly Salida { get { return _salida; } set { _salida = value; OnPropertyChanged();  } }
-        private TimeOnly _salida;
+        public TimePicker Salida { get { return _salida; } set { _salida = value; OnPropertyChanged();  } }
+        private TimePicker _salida;
 
         public TimeOnly Llegada { get { return _llegada; } set { _llegada = value; OnPropertyChanged(); } }
         private TimeOnly _llegada;

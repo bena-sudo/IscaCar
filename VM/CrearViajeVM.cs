@@ -27,7 +27,7 @@ namespace IscaCar.VM
 
         public List<DiaSetmana> DiasSetmana { get { return _diaSetmana; } set { _diaSetmana = value; OnPropertyChanged(); } }
         private List<DiaSetmana> _diaSetmana;
-        
+
         public Poblacion Origen { get { return _origen; } set { _origen = value; OnPropertyChanged(); } }
         private Poblacion _origen;
 
@@ -43,12 +43,20 @@ namespace IscaCar.VM
         public ObservableCollection<Poblacion> LPobDr { get { return _lPoblDr; } set { _lPoblDr = value; OnPropertyChanged(); } }
         private ObservableCollection<Poblacion> _lPoblDr;
 
+        public ObservableCollection<String> LDia { get { return _ldia; } set { _ldia = value; OnPropertyChanged(); } }
+        private ObservableCollection<String> _ldia;
+        public String Dia { get { return _dia; } set { _dia = value; OnPropertyChanged(); } }
+        private String _dia;
+
+
         public CrearViajeVM()
         {
             var poblacions = PoblacionDAO.GetPoblaciones();
             LPob = new ObservableCollection<Poblacion>(poblacions);
             LPobEq = new ObservableCollection<Poblacion>(poblacions);
             LPobDr = new ObservableCollection<Poblacion>();
+            LDia = new ObservableCollection<String> { "Lunes", "Martes" };
+            DiasSetmana = new List<DiaSetmana>();
             FechaInicio = DateTime.Now;
             FechaFin = DateTime.Now;
         }
@@ -64,6 +72,7 @@ namespace IscaCar.VM
             viaje.Plazas = Plazas;
             viaje.Observaciones = Observaciones;
             viaje.LPob = new List<Poblacion>(LPobDr);
+            viaje.DiasSetmana = DiasSetmana;
 
             UsuarioDAO.AddViaje(viaje);
         }
@@ -73,5 +82,13 @@ namespace IscaCar.VM
             LPobEq.Remove(p);
             LPobDr.Add(p);
         }
+
+        public void addDia(TimePicker hs, TimePicker hl)
+        {
+            DiaSetmana dia = new DiaSetmana();
+            dia.Dia = Dia;
+            dia.Salida = hs;
+            DiasSetmana.Add(dia);
+        }
     }
-} 
+}
