@@ -25,8 +25,8 @@ namespace IscaCar.VM
         public DateTime FechaFin { get { return _fechaFin; } set { _fechaFin = value; OnPropertyChanged(); } }
         private DateTime _fechaFin;
 
-        public List<DiaSetmana> DiasSetmana { get { return _diaSetmana; } set { _diaSetmana = value; OnPropertyChanged(); } }
-        private List<DiaSetmana> _diaSetmana;
+        public ObservableCollection<DiaSetmana> DiasSetmana { get { return _diaSetmana; } set { _diaSetmana = value; OnPropertyChanged(); } }
+        private ObservableCollection<DiaSetmana> _diaSetmana;
 
         public Poblacion Origen { get { return _origen; } set { _origen = value; OnPropertyChanged(); } }
         private Poblacion _origen;
@@ -55,10 +55,10 @@ namespace IscaCar.VM
             LPob = new ObservableCollection<Poblacion>(poblacions);
             LPobEq = new ObservableCollection<Poblacion>(poblacions);
             LPobDr = new ObservableCollection<Poblacion>();
-            LDia = new ObservableCollection<String> { "Lunes", "Martes" };
-            DiasSetmana = new List<DiaSetmana>();
-            FechaInicio = DateTime.Now;
-            FechaFin = DateTime.Now;
+            DiasSetmana = new ObservableCollection<DiaSetmana>();
+            LDia = new ObservableCollection<String> { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" };
+            FechaInicio = DateTime.Today;
+            FechaFin = DateTime.Today;
         }
 
         public void crearViaje()
@@ -87,8 +87,10 @@ namespace IscaCar.VM
         {
             DiaSetmana dia = new DiaSetmana();
             dia.Dia = Dia;
-            dia.Salida = hs;
+            dia.Salida = hs.Time;
+            dia.Llegada = hl.Time;
             DiasSetmana.Add(dia);
+            OnPropertyChanged("DiasSetmana");
         }
     }
 }

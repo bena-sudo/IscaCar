@@ -5,7 +5,7 @@
              Title="LlistaBuscarPage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Cancelar" Clicked="btCancelar" HorizontalOptions="Center" />
+            <Button Text="Cancelar" Clicked="btCancelar" />
             <ListView x:Name="ItiListView" ItemsSource="{Binding LViaj}" ItemTapped="itemPulsado">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -19,19 +19,19 @@
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Row="0" Grid.Column="0" Text="Origen" 
-                   Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
-                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding Origen.Nombre}" 
-                   Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
-                                <Label Grid.Row="0" Grid.Column="1" Text="Destino" 
-                   Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
-                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Destino.Nombre}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}" FontSize="12"/>
-                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding FechaInicio}" 
-                   Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
-                                <Label Grid.Row="1" Grid.Column="2" Text="{Binding FechaFin}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}" FontSize="12"/>
+                                <Label Grid.Row="0" Grid.Column="0" Text="Origen" Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding Origen.Nombre}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="12"/>
+
+                                <Label Grid.Row="0" Grid.Column="1" Text="Destino" Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Destino.Nombre}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="12"/>
+
+                                <Label Grid.Row="0" Grid.Column="2" Text="Inicio" Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
+                                <Label Grid.Row="1" Grid.Column="2" Text="{Binding FechaInicio}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="12"/>
+
+                                <Label Grid.Row="0" Grid.Column="3" Text="Fin" Style="{DynamicResource ListItemTextStyle}" FontSize="12"/>
+                                <Label Grid.Row="1" Grid.Column="3" Text="{Binding FechaFin}" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="12"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

@@ -5,14 +5,34 @@
              Title="IscaCar">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="¿Como puedo iniciar sesion?" HorizontalOptions="Center" />
-            <Label Text="Correo:" HorizontalOptions="Center" />
-            <Entry Text="pepe" HorizontalOptions="Fill" x:Name="correo"></Entry>
-            <Label Text="Contraseña:" HorizontalOptions="Center" />
-            <Entry Text="pepe" HorizontalOptions="Fill" x:Name="password"></Entry>
-            <Button Text="Iniciar" Clicked="botIniciarSesion" HorizontalOptions="Center"></Button>
-            <Label Text="¿No tienes cuenta?" HorizontalOptions="Center" />
-            <Button Text="Registrarse" Clicked="botRegistrarse" HorizontalOptions="Center" ></Button>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="¿Como puedo iniciar sesion?" />
+                
+                <Label Grid.Row="1" Grid.Column="0" Text="Correo:" />
+                <Entry Grid.Row="1" Grid.Column="1" Text="pepe" x:Name="correo"></Entry>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Contraseña:" />
+                <Entry Grid.Row="2" Grid.Column="1" Text="pepe" x:Name="password"></Entry>
+
+                <Button Grid.Row="3" Grid.Column="0" Text="Iniciar" Clicked="botIniciarSesion" />
+                
+                <Label Grid.Row="4" Grid.Column="0" Text="¿No tienes cuenta?" />
+                
+                <Button Grid.Row="5" Grid.Column="0" Text="Registrarse" Clicked="botRegistrarse" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

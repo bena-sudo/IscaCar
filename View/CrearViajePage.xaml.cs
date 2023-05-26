@@ -41,9 +41,8 @@ public partial class CrearViajePage : ContentPage
                             {
                                 if (vm.FechaFin.Month >= vm.FechaInicio.Month)
                                 {
-                                    if (vm.FechaFin.Day > vm.FechaInicio.Day)
+                                    if (vm.FechaFin.Day >= vm.FechaInicio.Day)
                                     {
-                                        
                                         vm.crearViaje();
                                         await Shell.Current.GoToAsync($"{nameof(CrearViajePage)}");
                                     }
@@ -103,6 +102,33 @@ public partial class CrearViajePage : ContentPage
 
     private void addDia(object sender, EventArgs e)
     {
-        vm.addDia(horaSalida,horaLlegada);
+        addDiaAsync();
+    }
+    private async Task addDiaAsync()
+    {
+        bool sem = true;
+        if (vm.Dia != null)
+        {
+            foreach (var dia in vm.DiasSetmana)
+            {
+                if (vm.Dia == dia.Dia)
+                {
+                    sem = false;
+                    break;
+                }
+            }
+            if(sem)
+            {
+                vm.addDia(horaSalida, horaLlegada);
+            }
+            else
+            {
+                await DisplayAlert("Error", "¡Debes de seleccionar un dia que no este!", "Vale");
+            }
+        }
+        else
+        {
+            await DisplayAlert("Error", "¡Debes de seleccionar un dia!", "Vale");
+        }
     }
 }

@@ -14,11 +14,11 @@ namespace IscaCar.Model
         public String Dia { get { return _dia; } set { _dia = value; OnPropertyChanged(); } }
         private String _dia;
 
-        public TimePicker Salida { get { return _salida; } set { _salida = value; OnPropertyChanged();  } }
-        private TimePicker _salida;
+        public TimeSpan Salida { get { return _salida; } set { _salida = value; OnPropertyChanged();  } }
+        private TimeSpan _salida;
 
-        public TimeOnly Llegada { get { return _llegada; } set { _llegada = value; OnPropertyChanged(); } }
-        private TimeOnly _llegada;
+        public TimeSpan Llegada { get { return _llegada; } set { _llegada = value; OnPropertyChanged(); } }
+        private TimeSpan _llegada;
 
         [ManyToOne]
         public Viaje Viaje { get { return _viaje; } set { _viaje = value; OnPropertyChanged(); } }

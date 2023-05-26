@@ -5,12 +5,26 @@
              Title="RegistrarPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Correo" VerticalOptions="Center" HorizontalOptions="Center" />
-            <Entry HorizontalOptions="Fill" x:Name="correo"></Entry>
-            <Label Text="Password" VerticalOptions="Center" HorizontalOptions="Center" />
-            <Entry HorizontalOptions="Fill" x:Name="password"></Entry>
-            <Button Text="Cancelar" Clicked="botCancelar" HorizontalOptions="FillAndExpand"></Button>
-            <Button Text="Registrarse" Clicked="botRegistrar" HorizontalOptions="FillAndExpand"></Button>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Correo" />
+                <Entry Grid.Row="0" Grid.Column="1" x:Name="correo" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Password" />
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="password" />
+
+                <Button Grid.Row="2" Grid.Column="0" Text="Cancelar" Clicked="botCancelar" />
+                <Button Grid.Row="2" Grid.Column="1" Text="Registrarse" Clicked="botRegistrar" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

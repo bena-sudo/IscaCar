@@ -15,33 +15,49 @@ namespace IscaCar.Helpers
                 new Usuario { Id = Guid.NewGuid().ToString(), Correo = "pepe", Password="pepe" },
                 new Usuario { Id = Guid.NewGuid().ToString(), Correo = "paco", Password="paco" }
             };
+
+            Poblacion i1 = new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Carcer", CodigoPostal = "1232" };
+            Poblacion i2 = new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Alcantera", CodigoPostal = "4555" };
+            Poblacion i3 = new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Castello", CodigoPostal = "1252" };
+            Poblacion i4 = new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Tous", CodigoPostal = "2457" };
+            Poblacion i5 = new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Alberic", CodigoPostal = "1234" };
+            Poblacion i6 = new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Alzira", CodigoPostal = "9876" };
+
             poblaciones = new List<Poblacion>()
             {
-                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Alberic", CodigoPostal="1234" },
-                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Carcer", CodigoPostal="1232" },
-                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Castello", CodigoPostal="1252" },
-                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Tous", CodigoPostal="2457" }
+                i1,i2,i3,i4,i5,i6
             };
 
             var item = items.First();
             Viaje viaje = new Viaje();
             viaje.Usuario = item;
-            viaje.Destino = poblaciones.First();
-            viaje.Origen = poblaciones.Last();
+            viaje.Destino = i5;
+            viaje.Origen = i1;
             viaje.Plazas = 2;
-            viaje.FechaInicio = DateTime.Now;
+            viaje.FechaInicio = new DateTime(2023, 5, 1, 0, 0, 0);
             viaje.FechaFin = new DateTime(2023, 6, 1, 0, 0, 0);
             viaje.Observaciones = "Soy amable";
-            viaje.Usuario = item;
             viaje.LPob = new List<Poblacion>
             {
-                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Alberic", CodigoPostal="1234" },
-                new Poblacion { Id = Guid.NewGuid().ToString(), Nombre = "Carcer", CodigoPostal="1232" }
+                i2
+            };
+
+            Viaje viaje2 = new Viaje();
+            viaje2.Usuario = item;
+            viaje2.Destino = i6;
+            viaje2.Origen = i1;
+            viaje2.Plazas = 2;
+            viaje2.FechaInicio = new DateTime(2023, 5, 1, 0, 0, 0);
+            viaje2.FechaFin = new DateTime(2023, 6, 1, 0, 0, 0);
+            viaje2.Observaciones = "Soy amable";
+            viaje2.LPob = new List<Poblacion>
+            {
+                i2,i5
             };
 
             item.Viajes = new List<Viaje>
             {
-                viaje
+                viaje,viaje2
             };
 
         }

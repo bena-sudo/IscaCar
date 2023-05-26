@@ -5,18 +5,25 @@
              Title="BuscarPage">
     <ContentPage.Content>
         <StackLayout>
-            <Picker ItemsSource="{Binding LPob}"
-                ItemDisplayBinding="{Binding Nombre}" 
-                SelectedIndex="{Binding IndexPobSalida}" 
-                SelectedItem="{Binding PobSalida}" 
-                VerticalOptions="Center" HorizontalOptions="Center" />
-            <Picker ItemsSource="{Binding LPob}"
-                ItemDisplayBinding="{Binding Nombre}" 
-                SelectedIndex="{Binding IndexPobLlegada}" 
-                SelectedItem="{Binding PobLlegada}"
-                VerticalOptions="Center" HorizontalOptions="Center" />
-            <DatePicker Date="{Binding Data}" VerticalOptions="Center" HorizontalOptions="Center" />
-            <Button Text="Buscar" Clicked="buscar" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="¿Desde dónde sales?" />
+                <Picker Grid.Row="0" Grid.Column="1" ItemsSource="{Binding LPob}" ItemDisplayBinding="{Binding Nombre}" SelectedIndex="{Binding IndexPobSalida}" SelectedItem="{Binding PobSalida}" />
+                <Label Grid.Row="1" Grid.Column="0" Text="¿A donde vas?" />
+                <Picker Grid.Row="1" Grid.Column="1" ItemsSource="{Binding LPob}" ItemDisplayBinding="{Binding Nombre}" SelectedIndex="{Binding IndexPobLlegada}" SelectedItem="{Binding PobLlegada}"/>
+                <Label Grid.Row="2" Grid.Column="0" Text="¿Que dia sales?" />
+                <DatePicker Grid.Row="2" Grid.Column="1" Date="{Binding Data}" />
+                <Button Grid.Row="3" Grid.Column="0" Text="Buscar" Clicked="buscar" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -42,6 +42,7 @@ namespace IscaCar.VM
             {
                 if (item != null)
                 {
+                    /*
                     if (item.Destino.CodigoPostal == PobLlegada.CodigoPostal)
                     {
                         if (item.Origen.CodigoPostal == PobSalida.CodigoPostal)
@@ -49,6 +50,58 @@ namespace IscaCar.VM
                             if (item.FechaInicio <= Data && item.FechaFin >= Data)
                             {
                                 list2.Add(item);
+                            }
+                        }
+                    }*/
+                    if (item.Origen.CodigoPostal == PobSalida.CodigoPostal)
+                    {
+                        if (item.Destino.CodigoPostal == PobLlegada.CodigoPostal)
+                        {
+                            if (item.FechaInicio <= Data && item.FechaFin >= Data)
+                            {
+                                list2.Add(item);
+                            }
+                        }
+                        else
+                        {
+                            foreach (var pob in item.LPob)
+                            {
+                                if (pob.CodigoPostal == PobLlegada.CodigoPostal)
+                                {
+                                    if (item.FechaInicio <= Data && item.FechaFin >= Data)
+                                    {
+                                        list2.Add(item);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var pob in item.LPob)
+                        {
+                            if (pob.CodigoPostal == PobSalida.CodigoPostal)
+                            {
+                                if (item.Destino.CodigoPostal == PobLlegada.CodigoPostal)
+                                {
+                                    if (item.FechaInicio <= Data && item.FechaFin >= Data)
+                                    {
+                                        list2.Add(item);
+                                    }
+                                }
+                                else
+                                {
+                                    foreach (var pob2 in item.LPob)
+                                    {
+                                        if (pob2.CodigoPostal == PobLlegada.CodigoPostal)
+                                        {
+                                            if (item.FechaInicio <= Data && item.FechaFin >= Data)
+                                            {
+                                                list2.Add(item);
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

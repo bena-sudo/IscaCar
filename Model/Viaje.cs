@@ -1,6 +1,7 @@
 ﻿using IscaCar.Helpers;
 using SQLite;
 using SQLiteNetExtensions.Attributes;
+using System.Collections.ObjectModel;
 
 namespace IscaCar.Model
 {
@@ -25,8 +26,8 @@ namespace IscaCar.Model
         private DateTime _fechaFin;
 
         [OneToMany]
-        public List<DiaSetmana> DiasSetmana { get { return _diaSetmana; } set { _diaSetmana = value; OnPropertyChanged(); } }
-        private List<DiaSetmana> _diaSetmana;
+        public ObservableCollection<DiaSetmana> DiasSetmana { get { return _diaSetmana; } set { _diaSetmana = value; OnPropertyChanged(); } }
+        private ObservableCollection<DiaSetmana> _diaSetmana;
 
         public Poblacion Origen { get { return _origen; } set { _origen = value; OnPropertyChanged(); } }
         private Poblacion _origen;
@@ -42,7 +43,7 @@ namespace IscaCar.Model
 
         public Viaje()
         {
-            DiasSetmana = new List<DiaSetmana>();
+            DiasSetmana = new ObservableCollection<DiaSetmana>();
             LPob = new List<Poblacion>();
         }
     }
